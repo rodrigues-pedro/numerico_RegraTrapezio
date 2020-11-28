@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integração Numérica | Regra do Trapézio</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/principal.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="cabecalho__titulo">Integração Numérica | Regra do Trapézio</h1>
+    </header>
+    <main>
+        <section class="section--input">
+            <form action="/" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <ul class="input__lista">
+                    <li class="lista__item">
+                        {{ form.function.label }}<br>
+                        {{ form.function(size=50) }}
+                        <article class="card__funcao">
+                        fudshwrfhfowhasd
+                        </article>
+                    </li>
+                        
+                    <li class="lista__item">
+                        {{ form.x_o.label }}<br>
+                        {{ form.x_o() }}
+                    </li>
+
+                    <li class="lista__item">
+                        {{ form.x_f.label }}<br>
+                        {{ form.x_f() }}
+                    </li>
+
+                    <li class="lista__item">
+                        {{ form.erro_n.label }}<br>
+                        {{ form.erro_n() }}
+                    </li>
+
+                    <li class="lista_item">
+                        {{ form.submit() }}
+                    </li>
+                </ul>
+            </form>
+        </section>
+        <section class="section--resultado">
+
+        </section>
+        <!-- <footer class="rodape">&copy;2020: Igor Alves, Murilo Rodrigues e Pedro Rodrigues</footer> -->
+    </main>
+</body>
+</html>
