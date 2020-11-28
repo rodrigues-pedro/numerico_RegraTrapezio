@@ -18,6 +18,7 @@
 
 .card__funcao{
     background-color: pink;
+    display: none;
     height: 50px;
     width: 50px;
 }
