@@ -62,6 +62,8 @@ def trapezioPlot(func, x_o, x_f, n):
         ax.vlines(x_h, 0, (func.subs(x, x_h)).evalf(), linestyles='dashed', color='#555555')
         x_i = x_i + h
 
+    return fig, ax
+
 def calculoArea(func, x_o, x_f, n):
     area = 0
     h = (x_f - x_o)/n
