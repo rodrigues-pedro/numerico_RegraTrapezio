@@ -22,10 +22,16 @@ def newPost():
     i = 1
     if form.validate_on_submit():
         i = 0
-        postTitle = form.title.data
-        postContent = form.content.data
-        postAuthor = form.author.data
-        config.add_post(postTitle, postContent, postAuthor)
+        func = parsing.sympy_parser.parse_expr(form.function.data)
+        x_o = form.x_o.data
+        x_f = form.x_f.data
+        erro_n = form.erro_n.data
+        if erro_n >= 1:
+            n = erro_n
+        else:
+            erro = erro_n
+        
+
         return render_template('index.html', form=form, post=post, i=i)
     return render_template('index.html', form=form, post=post, i=i)
 
