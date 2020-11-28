@@ -1,0 +1,13 @@
+.cabecalho{
+    background-color: var(--azul);
+    height: 3.725rem;
+}
+
+.cabecalho__titulo{
+    color: var(--branco);
+    font-size: 1.75rem;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-align: center;
+
+}
