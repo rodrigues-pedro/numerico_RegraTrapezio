@@ -6,9 +6,9 @@
     <title>Integração Numérica | Regra do Trapézio</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/base.css">
-    <link rel="stylesheet" href="../CSS/header.css">
-    <link rel="stylesheet" href="../CSS/principal.css">
+    <link rel="stylesheet" href="../static/CSS/base.css">
+    <link rel="stylesheet" href="../static/CSS/header.css">
+    <link rel="stylesheet" href="../static/CSS/principal.css">
 </head>
 <body>
     <header class="cabecalho">
@@ -16,29 +16,26 @@
     </header>
     <main>
         <section class="section--input">
-            <form action="/" method="post" novalidate>
+            <form action="/" method="post" novalidate class="input__form">
                 {{ form.hidden_tag() }}
                 <ul class="input__lista">
                     <li class="lista__item">
-                        {{ form.function.label }}<br>
-                        {{ form.function(size=50) }}
-                        <article class="card__funcao">
-                        fudshwrfhfowhasd
-                        </article>
+                        {{ form.function.label }}
+                        {{ form.function() }}
                     </li>
                         
                     <li class="lista__item">
-                        {{ form.x_o.label }}<br>
+                        {{ form.x_o.label }}
                         {{ form.x_o() }}
                     </li>
 
                     <li class="lista__item">
-                        {{ form.x_f.label }}<br>
+                        {{ form.x_f.label }}
                         {{ form.x_f() }}
                     </li>
 
                     <li class="lista__item">
-                        {{ form.erro_n.label }}<br>
+                        {{ form.erro_n.label }}
                         {{ form.erro_n() }}
                     </li>
 

@@ -1,0 +1,41 @@
+.section--input{
+    background-color: var(--cinza-claro);
+    height: calc(100vh - 3.725rem);
+    width: 25%;
+}
+
+.input__form{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: inherit;
+}
+
+.input__lista{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lista__item{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3rem 1rem;
+}
+
+.lista__item label{
+    font-size: 1.125rem;
+}
+
+.lista__item input {
+    background-color: transparent;
+    border: 1px solid var(--azul);
+    border-radius: 4px;
+    box-shadow: inset -1px -1px 20px #333333;
+    height: 20px;
+    margin-top: 20px;
+    width: 80%;
+}
