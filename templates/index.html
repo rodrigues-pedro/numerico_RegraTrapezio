@@ -49,11 +49,17 @@
             
             {% if i == 0 %}
                 {% if erro_n >= 1 %}
-                    {{ erro }}
-                    {{ area }}
-                    {{ grafico }}
+                    <p>
+                        {{ erro }}
+                        {{ area }}
+                        {{ grafico }}
+                    </p>
                 {% else %}
-                
+                    <p>
+                        {{ n }}
+                        {{ area }}
+                        {{ grafico }}
+                    </p>
                 {% endif %}
             {% elif i == 1 %}
                 <h1> Aguardando Dados </h1>

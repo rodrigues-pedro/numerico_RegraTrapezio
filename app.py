@@ -25,9 +25,9 @@ def newPost():
     if form.validate_on_submit():
         i = 0
         func = parse_expr(form.function.data)
-        x_o = np.as_numeric(form.x_o.data)
-        x_f = np.as_numeric(form.x_f.data)
-        erro_n = np.as_numeric(form.erro_n.data)
+        x_o = form.x_o.data
+        x_f = form.x_f.data
+        erro_n = form.erro_n.data
 
         if erro_n >= 1:
             n = int(np.around(erro_n, 0))
