@@ -39,3 +39,29 @@
     margin-top: 20px;
     width: 80%;
 }
+
+#submit{
+    background-color: var(--azul);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 1px 1px 20px var(--azul);
+    color: var(--branco);
+    font-family: 'Lora', serif;
+    height: 30px;
+    margin-bottom: 1rem;
+    transition: all .5s;
+    width: 150px;
+}
+
+#submit:hover{
+    transform: scale(1.125);
+}
+
+.rodape{
+    align-items: center;
+    background-color: var(--cinza);
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
