@@ -4,6 +4,7 @@ from wtforms import StringField, DecimalField, SubmitField
 from wtforms.validators import DataRequired
 from sympy.parsing.sympy_parser import parse_expr
 import config
+import numpy as np
 import os
 
 app = Flask(__name__)
@@ -30,7 +31,7 @@ def newPost():
         erro_n = form.erro_n.data
 
         if erro_n >= 1:
-            n = erro_n
+            n = int(np.around(erro_n, 0))
             area = config.calculoArea(func, x_o, x_f, n)
             erro = config.calculoErro(func, x_o, x_f, n)
         else:
@@ -40,7 +41,7 @@ def newPost():
 
         grafico = config.trapezioPlot(func, x_o, x_f, n)       
 
-        return render_template('index.html', form=form, area=area, erro=erro, n=n, grafico=grafico)
+        return render_template('index.html', form=form, area=area, erro=erro, n=n, grafico=grafico, erro_n=erro_n)
     return render_template('index.html', form=form)
 
 if __name__ == "__main__":

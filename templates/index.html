@@ -51,7 +51,13 @@
         <section class="section--resultado">
             
             {% if i == 0 %}
+                {% if erro_n >= 1 %}
+                    {{ erro }}
+                    {{ area }}
+                    {{ grafico }}
+                {% else %}
                 
+                {% endif %}
             {% elif i == 1 %}
                 <h1> Aguardando Dados </h1>
             {% endif %}
