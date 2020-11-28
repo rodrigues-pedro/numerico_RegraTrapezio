@@ -6,6 +6,7 @@ from sympy import *
 
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
+    FLASK_DEBUG=1
 
 x, w = symbols('x w')
 
