@@ -1,5 +1,8 @@
 .cabecalho{
+    align-items: center;
     background-color: var(--azul);
+    display: flex;
+    justify-content: center;
     height: 3.725rem;
 }
 
@@ -8,6 +11,5 @@
     font-size: 1.75rem;
     font-style: italic;
     letter-spacing: 2px;
-    text-align: center;
-
+    text-shadow: 1px 1px 10px var(--branco);
 }
