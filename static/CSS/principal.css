@@ -1,60 +1,67 @@
 .section--input{
-    background-color: var(--cinza-claro);
-    height: calc(100vh - 3.725rem);
-    width: 25%;
+    align-items: center;
+    background-color: #fdfdfd;
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 3.725rem - 50px);
 }
 
 .input__form{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: inherit;
+    background-color: var(--cinza-claro);
+    border-radius: 5px;
+    border-top: 2px solid var(--azul);
+    box-shadow: 3px 3px 20px #333333;
 }
 
 .input__lista{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 3rem 5rem;
 }
 
 .lista__item{
-    align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 3rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.lista__item input{
+    background-color: transparent;
+    border: 1px solid var(--azul);
+    border-radius: 4px;
+    box-shadow: inset -3px -3px 10px #777777, 1px 1px 10px #333333;
+    height: 25px;
+    padding: 0 5px;
 }
 
 .lista__item label{
     font-size: 1.125rem;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
-.lista__item input {
-    background-color: transparent;
-    border: 1px solid var(--azul);
-    border-radius: 4px;
-    box-shadow: inset -1px -1px 20px #333333;
-    height: 20px;
-    margin-top: 20px;
-    width: 80%;
+.lista__item label:active{
+    border: none;
+}
+
+.submit{
+    display: flex;
+    justify-content: center;
 }
 
 #submit{
     background-color: var(--azul);
     border: none;
-    border-radius: 4px;
-    box-shadow: 1px 1px 20px var(--azul);
+    border-radius: 5px;
+    box-shadow: inset -1px -1px 10px #333333b4, 1px 1px 10px var(--azul);
     color: var(--branco);
-    font-family: 'Lora', serif;
     height: 30px;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 120px;
     transition: all .5s;
-    width: 150px;
 }
 
 #submit:hover{
-    transform: scale(1.125);
+    cursor: pointer;
+    transform: scale(1.15);
 }
 
 .rodape{

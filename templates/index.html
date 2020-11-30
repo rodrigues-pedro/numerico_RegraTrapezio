@@ -39,30 +39,11 @@
                         {{ form.erro_n() }}
                     </li>
 
-                    <li class="lista_item">
+                    <li class="lista_item submit">
                         {{ form.submit() }}
                     </li>
                 </ul>
             </form>
-        </section>
-        <section class="section--resultado">
-            
-            {% if i == 0 %}
-                {% if erro_n >= 1 %}
-                    
-                    <p>{{ erro }}</p>
-                    <p>{{ area }}</p>
-                    <img src="{{ grafico }}"/>>
-                   
-                {% else %}
-                    {{ n }}
-                    {{ area }}
-                    <img src="{{ grafico }}"/>
-                {% endif %}
-            {% elif i == 1 %}
-                <h1> Aguardando Dados </h1>
-            {% endif %}
-
         </section>
         <footer class="rodape">&copy;2020: Igor Alves, Murilo Rodrigues e Pedro Rodrigues</footer>
     </main>
