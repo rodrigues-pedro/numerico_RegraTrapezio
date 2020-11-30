@@ -51,6 +51,9 @@ def funcPlot():
             area = resourses.calculoArea(func, x_o, x_f, n)
             erro = erro_n
 
+        areaReal = resourses.integralDefinida(func, x_o, x_f)
+        erroReal = abs(areaReal - area)
+
         fig = resourses.trapezioPlot(func, x_o, x_f, n) 
 
         # Convert plot to PNG image
@@ -61,8 +64,9 @@ def funcPlot():
         grafico = "data:image/png;base64,"
         grafico += base64.b64encode(pngImage.getvalue()).decode('utf8')
       
-        return render_template('results.html', i=0, erro_n=erro_n, n=n, erro=erro, area=area, x_o=x_o,
-                                            x_f=x_f, func=str(func), grafico=grafico)
+        return render_template('results.html', i=0, erro="{:.5f}".format(erro), area="{:.5f}".format(area), 
+                                               areaReal="{:.5f}".format(areaReal),erroReal="{:.5f}".format(erroReal),
+                                               func=str(func), grafico=grafico, n=n)
     return render_template('index.html', form=form)
 
 if __name__ == "__main__":

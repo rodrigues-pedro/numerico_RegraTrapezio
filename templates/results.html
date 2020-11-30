@@ -21,13 +21,11 @@
             {% if i == 0 %}
                 
                 <article class="card__resultados">
-                    <p>erro_n: {{ erro_n }}</p>
-                    <p>erro: {{ erro }}</p>
-                    <p>area: {{ area }}</p>
-                    <p>n: {{ n }}</p>
-                    <p>x_o: {{ x_o }}</p>
-                    <p>x_f: {{ x_f }}</p>
-                    <p>func: {{ func }}</p>
+                    <p>Área dos Trapézios: {{ area }}</p>
+                    <p>Estimativa do Erro : {{ erro }}</p>
+                    <p>Número de Trapézios a ser Usado: {{ n }}</p>
+                    <p>Área Real: {{ areaReal }}</p>
+                    <p>Erro Real: {{ erroReal }}</p>
                 </article>
                 <img src="{{ grafico }}"/>
                    

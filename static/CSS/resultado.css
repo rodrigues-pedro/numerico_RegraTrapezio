@@ -5,6 +5,7 @@
     flex-direction: column;
     height: calc(100vh - 3.725rem - 50px);
     justify-content: space-between;
+    margin: 2rem;
 }
 
 .card__resultados p{
