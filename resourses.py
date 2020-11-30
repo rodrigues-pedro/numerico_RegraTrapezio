@@ -8,17 +8,6 @@ from sympy.calculus.util import continuous_domain
 
 x, w = symbols('x w')
 
-def graficoPlot(func, x_o, x_f):
-    fig, ax = plt.subplots()
-
-    xx = np.linspace(x_o, x_f, 1000)
-    yy = lambdify(x, func, "numpy")(xx)
-    ax.plot(xx, np.transpose(yy))
-
-    ax.set_title('Função - {}'.format(str(func)))
-    ax.set_ylabel('y')
-    ax.set_xlabel('x')
-
 def interpoladoLagrange(x, y):
     poli = 0*w 
     for i in range(len(x)):
@@ -60,7 +49,7 @@ def trapezioPlot(func, x_o, x_f, n):
         ax.vlines(x_h, 0, (func.subs(x, x_h)).evalf(), linestyles='dashed', color='#555555')
         x_i = x_i + h
 
-    return fig, ax
+    return fig
 
 def calculoArea(func, x_o, x_f, n):
     area = 0

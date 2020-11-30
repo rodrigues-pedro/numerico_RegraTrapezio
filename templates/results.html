@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integração Numérica | Regra do Trapézio</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/CSS/base.css">
+    <link rel="stylesheet" href="../static/CSS/header.css">
+    <link rel="stylesheet" href="../static/CSS/principal.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="cabecalho__titulo">Integração Numérica | Regra do Trapézio</h1>
+    </header>
+    <main>
+        
+        <section class="section--resultado">
+            
+            {% if i == 0 %}
+                
+                    
+                <p>erro: {{ erro }}</p><br>
+                <p>area: {{ area }}</p><br>
+                <p>x_o: {{ x_o }}</p><br>
+                <p>x_f: {{ x_f }}</p><br>
+                <p>func: {{ func }}</p><br>
+                <img src="{{ grafico }}"/>
+                   
+                
+                
+            {% elif i == 1 %}
+                <h1> Aguardando Dados </h1>
+            {% endif %}
+
+        </section>
+        <footer class="rodape">&copy;2020: Igor Alves, Murilo Rodrigues e Pedro Rodrigues</footer>
+    </main>
+</body>
+</html>
