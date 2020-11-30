@@ -1,0 +1,13 @@
+.section--resultado{
+    align-items: center;
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 3.725rem - 50px);
+    justify-content: space-between;
+}
+
+.card__resultados p{
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}

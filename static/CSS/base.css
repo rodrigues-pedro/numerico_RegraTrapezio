@@ -4,3 +4,12 @@
 body{
     font-family: 'Lora', serif;
 }
+
+.rodape{
+    align-items: center;
+    background-color: var(--cinza);
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}

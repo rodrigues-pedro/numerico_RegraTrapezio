@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/CSS/base.css">
     <link rel="stylesheet" href="../static/CSS/header.css">
-    <link rel="stylesheet" href="../static/CSS/principal.css">
+    <link rel="stylesheet" href="../static/CSS/resultado.css">
 </head>
 <body>
     <header class="cabecalho">
@@ -20,17 +20,17 @@
             
             {% if i == 0 %}
                 
-                <p>erro_n: {{ erro_n }}</p><br>
-                <p>erro: {{ erro }}</p><br>
-                <p>area: {{ area }}</p><br>
-                <p>n: {{ n }}</p><br>
-                <p>x_o: {{ x_o }}</p><br>
-                <p>x_f: {{ x_f }}</p><br>
-                <p>func: {{ func }}</p><br>
+                <article class="card__resultados">
+                    <p>erro_n: {{ erro_n }}</p>
+                    <p>erro: {{ erro }}</p>
+                    <p>area: {{ area }}</p>
+                    <p>n: {{ n }}</p>
+                    <p>x_o: {{ x_o }}</p>
+                    <p>x_f: {{ x_f }}</p>
+                    <p>func: {{ func }}</p>
+                </article>
                 <img src="{{ grafico }}"/>
                    
-                
-                
             {% elif i == 1 %}
                 <h1> Aguardando Dados </h1>
             {% endif %}
