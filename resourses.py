@@ -78,7 +78,7 @@ def calculoN(func, x_o, x_f, erro):
     M_2 = max(yy)
 
     n = np.sqrt((M_2*(x_f - x_o)**3)/(12*erro))
-    return np.ceil(n)
+    return int(np.ceil(n))
 
 def verifica_continuidade(func, x_o, x_f):
     if continuous_domain(func, x, Interval(x_o, x_f)) == Interval(x_o, x_f):
