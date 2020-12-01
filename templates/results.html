@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../static/CSS/base.css">
     <link rel="stylesheet" href="../static/CSS/header.css">
     <link rel="stylesheet" href="../static/CSS/resultado.css">
+    <link rel="stylesheet" href="../static/CSS/principal.css">
 </head>
 <body>
     <header class="cabecalho">
@@ -28,6 +29,9 @@
                     <p>Erro Real: {{ erroReal }}</p>
                 </article>
                 <img src="{{ grafico }}"/>
+                
+                <a class="submit" href="/">Novo Cálculo</a>
+                    
                    
             {% elif i == 1 %}
                 <h1> Aguardando Dados </h1>

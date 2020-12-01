@@ -23,15 +23,7 @@ class Func(FlaskForm):
     x_o = DecimalField('Valor inicial do Intervalo', validators=[DataRequired()])
     x_f = DecimalField('Valor final do Intervalo', validators=[DataRequired()])
     erro_n = DecimalField('Erro ou Número de Trapézios', validators=[DataRequired()])
-    submit = SubmitField('Submit', validators=[DataRequired()])
-
-erro_n = 0.
-erro = 0.
-n = 0
-area = 0.
-x_o = 0.
-x_f = 0.
-func = 0*x
+    submit = SubmitField('Calcular', validators=[DataRequired()])
 
 @app.route('/', methods=['GET', 'POST'])
 def funcPlot():
