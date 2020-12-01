@@ -28,6 +28,10 @@
     text-align: center;
 }
 
+.section--resultado img{
+    margin: 3rem;
+}
+
 .novo--calculo{
     background-color: var(--azul);
     border-radius: 5px;
