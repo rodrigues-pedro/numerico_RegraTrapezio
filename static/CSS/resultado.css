@@ -3,7 +3,7 @@
     background-color: var(--branco);
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 3.725rem - 50px);
+    height: auto;
     justify-content: space-between;
     margin: 2rem;
 }
@@ -21,6 +21,10 @@
     letter-spacing: 1px;
     margin: 1.25rem 0;
     text-align: center;
+}
+
+.section--resultado img{
+    margin: 3rem;
 }
 
 .novo--calculo{
