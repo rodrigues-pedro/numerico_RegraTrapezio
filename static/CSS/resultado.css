@@ -3,9 +3,14 @@
     background-color: var(--branco);
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 3.725rem - 50px);
+    height: auto;
     justify-content: space-between;
     margin: 2rem;
+}
+
+.section--resultado img {
+
+    margin: 3rem
 }
 
 .card__resultados{
