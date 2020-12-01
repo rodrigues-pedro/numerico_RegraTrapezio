@@ -67,9 +67,9 @@ def calculoErro(func, x_o, x_f, n):
     xx = np.linspace(x_o, x_f, 1000)
     yy = lambdify(x, diff_2, "numpy")(xx)
     try:
-        M_2 = float(max(yy))
+        M_2 = abs(float(max(yy)))
     except:
-        M_2 = float(yy)
+        M_2 = abs(float(yy))
 
     erro = n*M_2*h**3/12
     return erro
@@ -79,9 +79,9 @@ def calculoN(func, x_o, x_f, erro):
     xx = np.linspace(x_o, x_f, 1000)
     yy = lambdify(x, diff_2, "numpy")(xx)
     try:
-        M_2 = float(max(yy))
+        M_2 = abs(float(max(yy)))
     except:
-        M_2 = float(yy)
+        M_2 = abs(float(yy))
         
     n = np.sqrt((M_2*(x_f - x_o)**3)/(12*erro))
     if int(np.ceil(n)) >= 1:
