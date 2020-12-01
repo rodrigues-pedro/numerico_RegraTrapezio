@@ -88,13 +88,7 @@ def calculoN(func, x_o, x_f, erro):
         return int(np.ceil(n))
     else:
         return 1
-
-def verifica_continuidade(func, x_o, x_f):
-    if continuous_domain(func, x, Interval(x_o, x_f)) == Interval(x_o, x_f):
-        return "Função é continua no intervalo"
-    else:
-        return "A Função não é continua no intervalo, Indique outro Intervalo"
-
+        
 def integralDefinida(func, x_o, x_f):
     try:
         return N(integrate(func, (x, x_o, x_f)))
