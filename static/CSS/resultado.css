@@ -22,3 +22,23 @@
     margin: 1.25rem 0;
     text-align: center;
 }
+
+.novo--calculo{
+    background-color: var(--azul);
+    border-radius: 5px;
+    box-shadow: inset -1px -1px 10px #333333b4, 1px 1px 10px var(--azul);
+    color: var(--branco);
+    display: inline-block;
+    font-size: 1.125rem;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    padding: 0.8rem;
+    transition: all .5s;
+}
+
+.novo--calculo:hover, .novo--calculo:focus, .novo--calculo:active{
+    background-color: var(--branco);
+    border: 3px solid var(--azul);
+    color: var(--azul);
+    box-shadow: none;
+}
