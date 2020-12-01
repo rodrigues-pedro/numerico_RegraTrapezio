@@ -23,7 +23,7 @@ def trapezioPlot(func, x_o, x_f, n):
 
     xxFunc = np.linspace(x_o, x_f, n*1000)
     yyFunc = lambdify(x, func, "numpy")(xxFunc)
-    ax.plot(xxFunc, np.transpose(yyFunc))
+    ax.plot(xxFunc, np.transpose(yyFunc), linewidth=2)
 
     ax.set_title('Função - {}'.format(str(func)))
     ax.set_ylabel('y')
@@ -40,13 +40,13 @@ def trapezioPlot(func, x_o, x_f, n):
         
         xx = np.linspace(x_i, x_h, 1000)
         yy = lambdify(w, reta, "numpy")(xx)
-        ax.plot(xx, np.transpose(yy), color='#555555')
-        ax.fill_between(xx, yy, 0, alpha=0.20, color='#555555')
+        ax.plot(xx, np.transpose(yy), color='#555555', linewidth=1)
+        ax.fill_between(xx, yy, 0, alpha=0.20, color='#555555', label='Areá Trapézio')
 
         yyFunc_fill = np.split(yyFunc, n)[i]
-        ax.fill_between(xx, yy, yyFunc_fill, alpha=0.50, color='#555555')
-        ax.vlines(x_i, 0, (func.subs(x, x_i)).evalf(), linestyles='dashed', color='#555555')
-        ax.vlines(x_h, 0, (func.subs(x, x_h)).evalf(), linestyles='dashed', color='#555555')
+        ax.fill_between(xx, yy, yyFunc_fill, alpha=0.50, color='#555555', label='Erro')
+        ax.vlines(x_i, 0, (func.subs(x, x_i)).evalf(), linestyles='dashed', color='#555555', linewidth=1)
+        ax.vlines(x_h, 0, (func.subs(x, x_h)).evalf(), linestyles='dashed', color='#555555', linewidth=1)
         x_i = x_i + h
 
     return fig
@@ -66,7 +66,10 @@ def calculoErro(func, x_o, x_f, n):
     diff_2 = diff(diff(func, x), x)
     xx = np.linspace(x_o, x_f, 1000)
     yy = lambdify(x, diff_2, "numpy")(xx)
-    M_2 = float(max(yy))
+    try:
+        M_2 = float(max(yy))
+    except:
+        M_2 = float(yy)
 
     erro = n*M_2*h**3/12
     return erro
@@ -75,10 +78,16 @@ def calculoN(func, x_o, x_f, erro):
     diff_2 = diff(diff(func, x), x)
     xx = np.linspace(x_o, x_f, 1000)
     yy = lambdify(x, diff_2, "numpy")(xx)
-    M_2 = max(yy)
-
+    try:
+        M_2 = float(max(yy))
+    except:
+        M_2 = float(yy)
+        
     n = np.sqrt((M_2*(x_f - x_o)**3)/(12*erro))
-    return int(np.ceil(n))
+    if int(np.ceil(n)) >= 1:
+        return int(np.ceil(n))
+    else:
+        return 1
 
 def verifica_continuidade(func, x_o, x_f):
     if continuous_domain(func, x, Interval(x_o, x_f)) == Interval(x_o, x_f):

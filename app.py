@@ -43,7 +43,7 @@ def funcPlot():
         erro_n = float(form.erro_n.data)
 
         if erro_n >= 1:
-            n = int(np.around(erro_n, 0))
+            n = int(np.ceil(erro_n))
             area = resourses.calculoArea(func, x_o, x_f, n)
             erro = resourses.calculoErro(func, x_o, x_f, n)
         else:
@@ -52,7 +52,6 @@ def funcPlot():
             erro = erro_n
 
         areaReal = resourses.integralDefinida(func, x_o, x_f)
-        erroReal = abs(areaReal - area)
 
         fig = resourses.trapezioPlot(func, x_o, x_f, n) 
 
@@ -63,10 +62,17 @@ def funcPlot():
         # Encode PNG image to base64 string
         grafico = "data:image/png;base64,"
         grafico += base64.b64encode(pngImage.getvalue()).decode('utf8')
-      
-        return render_template('results.html', i=0, erro="{:.5f}".format(erro), area="{:.5f}".format(area), 
-                                               areaReal="{:.5f}".format(areaReal),erroReal="{:.5f}".format(erroReal),
-                                               func=str(func), grafico=grafico, n=n)
+
+        try:
+            erroReal = abs(areaReal - area)      
+            return render_template('results.html', i=0, erro="{:.5f}".format(erro), area="{:.5f}".format(area), 
+                                                areaReal="{:.5f}".format(areaReal),erroReal="{:.5f}".format(erroReal),
+                                                func=str(func), grafico=grafico, n=n)
+        except:
+            erroReal = areaReal
+            return render_template('results.html', i=0, erro="{:.5f}".format(erro), area="{:.5f}".format(area), 
+                                                areaReal="{}".format(areaReal),erroReal="{}".format(erroReal),
+                                                func=str(func), grafico=grafico, n=n)
     return render_template('index.html', form=form)
 
 if __name__ == "__main__":
