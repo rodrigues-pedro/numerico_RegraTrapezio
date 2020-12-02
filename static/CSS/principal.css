@@ -3,7 +3,7 @@
     background-color: #fdfdfd;
     display: flex;
     justify-content: center;
-    height: calc(100vh - 3.725rem - 50px);
+    height: auto;
 }
 
 .input__form{
@@ -11,6 +11,7 @@
     border-radius: 5px;
     border-top: 2px solid var(--azul);
     box-shadow: 3px 3px 20px #333333;
+    margin: 3rem;
 }
 
 .input__lista{
@@ -47,19 +48,38 @@
     justify-content: center;
 }
 
-#submit{
+#btn-submit{
     background-color: var(--azul);
     border: none;
     border-radius: 5px;
     box-shadow: inset -1px -1px 10px #333333b4, 1px 1px 10px var(--azul);
     color: var(--branco);
     height: 30px;
-    margin-top: 1rem;
+    margin: 1rem 0;
     width: 120px;
     transition: all .5s;
 }
 
-#submit:hover{
+#checar_formula{
+    background-color: var(--azul);
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset -1px -1px 10px #333333b4, 1px 1px 10px var(--azul);
+    color: var(--branco);
+    height: 50px;
+    margin: 0.75rem 0.5rem;
+    width: 120px;
+    transition: all .5s;
+}
+
+#checar_formula:hover{
+    cursor: pointer;
+    transform: scale(1.15);
+}
+#btn-submit:disabled {
+    opacity: 0.3;
+}
+#btn-submit:enabled:hover{
     cursor: pointer;
     transform: scale(1.15);
 }

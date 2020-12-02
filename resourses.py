@@ -94,3 +94,9 @@ def integralDefinida(func, x_o, x_f):
         return N(integrate(func, (x, x_o, x_f)))
     except:
         return "Função não integravel por métodos convencionais"
+
+def verifica_continuidade(func, x_o, x_f):
+    if continuous_domain(func, x, Interval(x_o, x_f)) == Interval(x_o, x_f):
+        return '1'
+    else:
+        return "A Função não é continua no intervalo, Indique outro Intervalo"
