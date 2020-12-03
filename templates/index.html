@@ -12,12 +12,18 @@
     <link rel="stylesheet" href="../static/CSS/modal.css">
 </head>
 <body>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+    src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
     <header class="cabecalho">
         <h1 class="cabecalho__titulo">Integração Numérica | Regra do Trapézio</h1>
     </header>
     <main>
         <section class="section--input">
-            <form action="/" method="post" novalidate class="input__form">
+            <form action="/" method="post" novalidate class="input__form" id="form">
                 {{ form.hidden_tag() }}
                 <input type="button" value="?" class="sintaxe" id="sintaxe">
                 <ul class="input__lista">
@@ -59,12 +65,14 @@
             <article class="modal" id="modal">
                 <button class="btn--fechar" id="btn--fechar">x</button>
                 <h3 class="modal__titulo">Sintaxe para função:</h3>
-                <p class="modal__intrucoes">Instrução 1</p>
-                <p class="modal__intrucoes">Instrução 2</p>
-                <p class="modal__intrucoes">Instrução 3</p>
-                <p class="modal__intrucoes">Instrução 4</p>
-                <p class="modal__intrucoes">Instrução 5</p>
-                <p class="modal__intrucoes">Instrução 6</p>
+                <p class="modal__intrucoes">Para $x\cdot a$ escreva x*a</p>
+                <p class="modal__intrucoes">Para $\frac{a}{b}$ escreva x/a</p>
+                <p class="modal__intrucoes">Para $x^a$ escreva x**a</p>
+                <p class="modal__intrucoes">Para sen(x) escreva sin(x)</p>
+                <p class="modal__intrucoes">Para $\cos(x)$ escreva cos(x)</p>
+                <p class="modal__intrucoes">Para $\ln(x)$ escreba log(x)</p>
+                <p class="modal__intrucoes">Para $\log_a x$ escreva log(x, a)</p>
+                <p class="modal__intrucoes">Para $\sqrt{x}$ escreva sqrt(x)</p>
             </article>
         </section>
     </main>
@@ -86,10 +94,6 @@
             var formula = document.getElementById('function').value;
             var x_o = document.getElementById('x_o').value;
             var x_f = document.getElementById('x_f').value;
-
-            console.log("formula: ",formula);
-            console.log("x_o: ",x_o);
-            console.log("x_f: ",x_f);
                 
             $.ajax({
                 url: "{{url_for('verificar_formula')}}?formula=" + formula+ "&x_o=" + x_o+ "&x_f=" + x_f,
