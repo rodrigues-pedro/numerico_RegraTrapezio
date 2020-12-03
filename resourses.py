@@ -87,8 +87,7 @@ def trapezioPlot(func, x_o, x_f, n):
         
         #atualiza o valor de inicio do trapézio, como o fim do trapézio anterior
         x_i = x_i + h
-    #insere a legenda
-    ax.legend()
+    
     #retorna a figura à ser plotada
     return fig
 
