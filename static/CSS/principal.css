@@ -12,6 +12,7 @@
     border-top: 2px solid var(--azul);
     box-shadow: 3px 3px 20px #333333;
     margin: 3rem;
+    position: relative;
 }
 
 .input__lista{
