@@ -1,14 +1,13 @@
-function  iniciaModal(modalID) {
-    const modal = document.getElementById(modalID);
-    if(modal){
-        modal.classList.add('mostrar');
-        modal.addEventListener('click', (evento) => {
-            if(evento.target.Id == modalID || evento.target.className == 'btn--fechar'){
-                modal.classList.remove('mostrar')
-            }
-        });
-    }
-}
+const btn = document.querySelector('#sintaxe');
 
-const modalSintaxe = document.querySelector('.cabecalho');
-modalSintaxe.addEventListener('click', iniciaModal('modal--instrucoes'));
+btn.addEventListener('click', function() {
+    const modal = document.querySelector('#modal--instrucoes');
+    modal.classList.add('mostrar');
+
+    const btnFechar = document.querySelector('#btn--fechar');
+    modal.addEventListener('click', function(evento) {
+        if(evento.target == modal || evento.target == btnFechar){
+            modal.classList.remove('mostrar');
+        }
+    });
+});
