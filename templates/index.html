@@ -86,7 +86,7 @@
         
         $("#checar_formula").click(function () {
             var formula = document.getElementById('function').value;
-            var formula = formula.replace('+', 'plus')
+            var formula = formula.replaceAll('+', 'plus')
             var x_o = document.getElementById('x_o').value;
             var x_f = document.getElementById('x_f').value;
             

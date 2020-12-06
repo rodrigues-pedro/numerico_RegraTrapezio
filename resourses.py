@@ -49,6 +49,10 @@ def trapezioPlot(func, x_o, x_f, n):
     xxFunc = np.linspace(x_o, x_f, n*1000)
     #calcula o f(x) desses valores gerados
     yyFunc = lambdify(x, func, "numpy")(xxFunc)
+    try:
+        len(yyFunc)
+    except:
+        yyFunc = np.full((1, n*1000), N(func))
     # plota os intervalos calculados (gráfico da função em si)
     ax.plot(xxFunc, np.transpose(yyFunc), linewidth=2)
 
@@ -73,9 +77,13 @@ def trapezioPlot(func, x_o, x_f, n):
         reta = interpoladoLagrange(dados['x'], dados['y'])
         
         #repete o processo de criação do gráfico
-        xx = np.linspace(x_i, x_h, 1000)
-        yy = lambdify(w, reta, "numpy")(xx)
-        ax.plot(xx, np.transpose(yy), color='#555555', linewidth=1)
+        xx = np.array(np.linspace(x_i, x_h, 1000))
+        yy = np.array(lambdify(w, reta, "numpy")(xx))
+        try:
+            len(yy)
+        except:
+            yy = np.full((1, 1000), N(func))
+        ax.plot(xx, np.array(np.transpose(yy)), color='#555555', linewidth=1)
         #preenche a aréa entre a reta e o eixo x
         ax.fill_between(xx, yy, 0, alpha=0.20, color='#555555', label='Areá Trapézio')
         #preenche a aréa entre a reta e o gráfico da função como erro
