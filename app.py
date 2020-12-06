@@ -91,7 +91,8 @@ def funcPlot():
 @app.route('/verificar_formula', methods=['GET'])
 def verificar_formula():
     #recebe os dados
-    func = parse_expr(request.args.get('formula'))
+    func = request.args.get('formula').replace('plus', '+')
+    func = parse_expr(func)
     x_o = float(request.args.get('x_o'))
     x_f = float(request.args.get('x_f'))
     #verifica a continuidade
