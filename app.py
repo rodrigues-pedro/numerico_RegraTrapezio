@@ -58,11 +58,17 @@ def funcPlot():
                 area = resourses.calculoArea(func, x_o, x_f, n)
                 #coloca o erro na variavel correta
                 erro = erro_n
-
+            
             #calcula a area real da integral
             areaReal = resourses.integralDefinida(func, x_o, x_f)
-            #realiza o gráfico
-            fig = resourses.trapezioPlot(func, x_o, x_f, n) 
+
+            if n <= 30:
+                #realiza o gráfico
+                fig, ax = resourses.trapezioPlot(func, x_o, x_f, n) 
+            else:
+                #realiza o gráfico apenas para exemplo
+                fig, ax = resourses.trapezioPlot(func, x_o, x_f, 5)
+                ax.set_title('Apenas para exemplo do método com 5 Trapézios:\nFunção - {}'.format(str(func)))
 
             #converte o gráfico em PNG
             pngImage = io.BytesIO()
@@ -71,7 +77,7 @@ def funcPlot():
             #decodifica a imagem PNG para base64 string
             grafico = "data:image/png;base64,"
             grafico += base64.b64encode(pngImage.getvalue()).decode('utf8')
-            
+
             #se o valor da integral real existir calcula o erro real e envia tudo para a página dos resultados
             try:
                 erroReal = abs(areaReal - area)      

@@ -97,7 +97,7 @@ def trapezioPlot(func, x_o, x_f, n):
         x_i = x_i + h
     
     #retorna a figura à ser plotada
-    return fig
+    return fig, ax
 
 #calcula a soma das areas dos trapézio
 def calculoArea(func, x_o, x_f, n):
