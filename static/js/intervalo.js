@@ -3,13 +3,17 @@ const xFinal = document.querySelector('#x_f');
 const calcular = document.querySelector('#btn-submit');
 
 calcular.addEventListener('click',function(){
-    if(xInicial.value > xFinal.value){
+    console.log(xInicial.textContent)
+    console.log(xInicial.value)
+    console.log(typeof(xInicial.value))
+    console.log(xFinal.value)
+    console.log(typeof(xFinal.value))
+    if(Number(xInicial.value) > Number(xFinal.value)){
         alert('O valor inicial do intervalo não pode ser maior que o final. Por favor, reescreva o intervalo');
         xInicial.value = '';
         xFinal.value = '';
         document.reload(false);
     }
-    console.log(xInicial.textContent)
 });
 
 $("#form").submit(function() {
