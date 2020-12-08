@@ -149,7 +149,8 @@ def calculoErro(func, x_o, x_f, n):
     yy = lambdify(x, diff_2, "numpy")(xx)
     #se possivel, define o valor M_2 como módulo do valor máximo da segunda derivada no intervalo
     try:
-        M_2 = abs(float(max(yy)))
+        abs_yy = [abs(i) for i in yy]
+        M_2 = float(max(abs_yy))
     #exceto quando a segunda derivada é constante:
     except:
         #define M_2 como módulo da segunda derivada
@@ -174,7 +175,8 @@ def calculoN(func, x_o, x_f, erro):
     yy = lambdify(x, diff_2, "numpy")(xx)
     #se possivel, define o valor M_2 como módulo do valor máximo da segunda derivada no intervalo
     try:
-        M_2 = abs(float(max(yy)))
+        abs_yy = [abs(i) for i in yy]
+        M_2 = float(max(abs_yy))
     #exceto quando a segunda derivada é constante:
     except:
         #define M_2 como módulo da segunda derivada
